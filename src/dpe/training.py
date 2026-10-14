@@ -1,3 +1,4 @@
+
 """Séparation reproductible des données DPE."""
 
 import hashlib
@@ -113,4 +114,102 @@ def split_data(
 
     raise ValueError(
         "strategy doit être 'group' ou 'stratified'."
+    )
+
+
+def split_train_validation_test(
+    X: pd.DataFrame,
+    y: pd.Series,
+    test_size: float = TEST_SIZE,
+    validation_size: float = 0.20,
+    random_state: int = RANDOM_STATE,
+):
+    """
+    Sépare les données en train, validation et test.
+
+    Garanties :
+    - Aucun profil identique entre les trois ensembles.
+    - Le test final conserve la séparation de split_data().
+    - La séparation est reproductible.
+
+    validation_size représente une proportion du jeu complet.
+    """
+
+    if not isinstance(X, pd.DataFrame):
+        raise TypeError("X doit être un DataFrame pandas.")
+
+    if not isinstance(y, pd.Series):
+        raise TypeError("y doit être une Series pandas.")
+
+    if len(X) != len(y):
+        raise ValueError(
+            "X et y doivent avoir le même nombre de lignes."
+        )
+
+    if not 0 < test_size < 1:
+        raise ValueError(
+            "test_size doit être entre 0 et 1."
+        )
+
+    if not 0 < validation_size < 1:
+        raise ValueError(
+            "validation_size doit être entre 0 et 1."
+        )
+
+    if test_size + validation_size >= 1:
+        raise ValueError(
+            "La somme test_size + validation_size "
+            "doit être inférieure à 1."
+        )
+
+    # 1. Conserver le même test final que précédemment.
+    X_dev, X_test, y_dev, y_test = split_data(
+        X,
+        y,
+        strategy="group",
+        test_size=test_size,
+        random_state=random_state,
+    )
+
+    # 2. Calculer la part de validation dans le développement.
+    relative_validation_size = (
+        validation_size / (1 - test_size)
+    )
+
+    # 3. Séparer train et validation par profils.
+    X_train, X_val, y_train, y_val = split_data(
+        X_dev,
+        y_dev,
+        strategy="group",
+        test_size=relative_validation_size,
+        random_state=random_state + 1,
+    )
+
+    # 4. Vérifier l'absence de profils communs.
+    train_groups = set(make_profile_groups(X_train))
+    val_groups = set(make_profile_groups(X_val))
+    test_groups = set(make_profile_groups(X_test))
+
+    if train_groups & val_groups:
+        raise RuntimeError(
+            "Profils communs entre train et validation."
+        )
+
+    if train_groups & test_groups:
+        raise RuntimeError(
+            "Profils communs entre train et test."
+        )
+
+    if val_groups & test_groups:
+        raise RuntimeError(
+            "Profils communs entre validation et test."
+        )
+
+    return (
+        X_train,
+        X_val,
+        X_test,
+        y_train,
+        y_val,
+        y_test,
     )
