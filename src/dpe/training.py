@@ -213,3 +213,47 @@ def split_train_validation_test(
         y_val,
         y_test,
     )
+
+
+def make_group_cv(
+    n_splits: int = 5,
+    random_state: int = RANDOM_STATE,
+):
+    """Validation croisée stratifiée par groupes de profils.
+
+    Utilisée pendant l'optimisation : un même profil ne peut jamais se
+    trouver à la fois dans les plis d'entraînement et de validation, tout
+    en conservant approximativement la proportion des classes.
+    """
+
+    from sklearn.model_selection import StratifiedGroupKFold
+
+    return StratifiedGroupKFold(
+        n_splits=n_splits,
+        shuffle=True,
+        random_state=random_state,
+    )
+
+
+def stratified_subsample(
+    X: pd.DataFrame,
+    y: pd.Series,
+    n_samples: int,
+    random_state: int = RANDOM_STATE,
+):
+    """Sous-échantillon stratifié (SVM à noyau, t-SNE).
+
+    Renvoie les données inchangées si n_samples >= len(X).
+    """
+
+    if n_samples is None or n_samples >= len(X):
+        return X, y
+
+    X_sample, _, y_sample, _ = train_test_split(
+        X,
+        y,
+        train_size=n_samples,
+        random_state=random_state,
+        stratify=y,
+    )
+    return X_sample, y_sample
