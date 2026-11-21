@@ -1,5 +1,8 @@
 ﻿# DPE Energy Classification
 
+**Site interactif : [berullekkb.github.io/dpe-energy-classification](https://berullekkb.github.io/dpe-energy-classification/)**
+(simulateur, poids de classe, fuite par profils, carte t-SNE, benchmark).
+
 Projet AI28 : prédire la performance énergétique des logements des
 Hauts-de-France à partir des données DPE de l'ADEME.
 
@@ -160,6 +163,41 @@ matrices de confusion de chaque modèle, matrice de test, SVM (criblage des
 noyaux, heatmap C × gamma, frontière ACP), ACP, t-SNE et zooms par paire de
 classes.
 
+## Site interactif
+
+Le dossier `docs/` contient un site statique (HTML, CSS, JavaScript sans
+dépendance) publié par GitHub Pages depuis la branche `main`, dossier `/docs`.
+
+- Toutes les données de `docs/data/` sont produites par
+  `scripts/export_site_data.py` à partir de `results/` : aucun chiffre n'est
+  saisi à la main. `tests/test_site.py` vérifie qu'elles correspondent aux
+  résultats du dépôt.
+- Le simulateur exécute le modèle LightGBM (F1 macro 0,769 en validation)
+  directement dans le navigateur (`docs/assets/predict.js`). Le Random Forest
+  retenu est trop volumineux pour un navigateur (209 Mo).
+- `tests/js/parity.test.mjs` vérifie que le navigateur reproduit les
+  probabilités Python sur 500 logements de validation (écart maximal
+  5×10⁻¹³) et sur les 300 logements proposés par le simulateur.
+- Le simulateur part toujours d'un logement réel de validation. L'inertie du
+  bâtiment n'y est pas modifiable, car ses codes sont ambigus dans les
+  données (section 8 de l'audit).
+- Ces vérifications font partie de `python -m pytest -q` : à lancer avant
+  chaque push qui modifie `docs/`.
+
+Aperçu local :
+
+```powershell
+python -m http.server 8000 --directory docs    # puis http://localhost:8000
+```
+
+Mise à jour après de nouvelles expériences :
+
+```powershell
+python scripts/sweep_class_weights.py
+python scripts/export_site_data.py
+node tests/js/parity.test.mjs
+```
+
 ## Structure
 
 ```text
@@ -185,10 +223,12 @@ scripts/
     visualize_projections.py ACP / t-SNE (validation)
     encoding_ablation.py     nouvelle expérience : encodages
     evaluate_final.py        évaluation unique sur le test
-tests/                       51 tests pytest
+    sweep_class_weights.py   effet du poids de la classe Performant
+    export_site_data.py      données du site
+tests/                       65 tests pytest + test de parité JavaScript
 results/metrics, results/figures   résultats versionnés
 results/models                     modèles entraînés (non versionnés)
-docs/audit_notebooks.md            audit et plan de migration
+docs/                              site statique (GitHub Pages) et audit des notebooks
 notebooks/                         notebooks historiques (inchangés)
 ```
 
@@ -203,7 +243,7 @@ python -m venv .venv
 pip install -r requirements.txt
 $env:PYTHONPATH = (Resolve-Path .\src).Path
 
-python -m pytest -q                                   # 51 tests
+python -m pytest -q                                   # 65 tests
 python scripts/check_split.py
 python scripts/audit_leakage.py
 python scripts/train_svm.py --n-trials 25             # ~10 min
