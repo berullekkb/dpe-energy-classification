@@ -130,3 +130,16 @@ def test_label_encoded_classifier_round_trip():
     assert list(clf.classes_) == ["Energivore", "Passable", "Performant"]
     pred = clf.predict(X[["volume_stockage_generateur_n1_ecs_n1"]])
     assert pred.dtype.kind in "UO"
+
+
+def test_svm_kernel_screening_configurations_fit():
+    from dpe.models import SVM_KERNEL_SCREENING
+
+    X, y = small_dataset()
+    spec = get_spec("svm_rbf")
+    assert set(SVM_KERNEL_SCREENING) == {"Linéaire", "Polynomial (degré 3)", "RBF"}
+    for params in SVM_KERNEL_SCREENING.values():
+        pipeline = fit_pipeline(spec, {**params, "class_weight": "balanced"}, X, y)
+        clf = pipeline.named_steps["clf"]
+        assert clf.kernel == params["kernel"]
+        assert clf.n_support_.sum() > 0

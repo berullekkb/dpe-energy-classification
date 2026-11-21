@@ -1,0 +1,36 @@
+{
+  "model": "svm_rbf",
+  "label": "SVM (noyau RBF)",
+  "family": "svm",
+  "origin": "historical",
+  "historical_notebook": "04",
+  "encoding": "target",
+  "scaled": true,
+  "params": {
+    "weight_Performant": 3,
+    "weight_Energivore": 1,
+    "C": 36.78098869849107,
+    "gamma": 0.014547179273621653
+  },
+  "class_weight": {
+    "Performant": 3.0,
+    "Passable": 1.0,
+    "Energivore": 1.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7044646856852431,
+  "f1_macro_cv_std": 0.046328581863007035,
+  "f1_macro_cv_folds": [
+    0.6943264414025491,
+    0.7941585072760541,
+    0.6602726634975299,
+    0.6850952295314313,
+    0.6884705867186511
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 22,
+  "n_splits": 5,
+  "tuning_rows": 8000,
+  "tuning_seconds": 172.0
+}

@@ -1,0 +1,152 @@
+{
+  "model": "svm_rbf",
+  "label": "SVM (noyau RBF)",
+  "family": "svm",
+  "origin": "historical",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.8148247978436658,
+    "balanced_accuracy": 0.7415851476006097,
+    "f1_macro": 0.747582950917541,
+    "f1_weighted": 0.8120658270238923
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.7030456852791879,
+      "recall": 0.7030456852791879,
+      "f1": 0.7030456852791879,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.8545767716535433,
+      "recall": 0.8877811860940695,
+      "f1": 0.8708625877632898,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.7078220858895705,
+      "recall": 0.6339285714285714,
+      "f1": 0.6688405797101449,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7044646856852431,
+    "f1_macro_cv_std": 0.046328581863007035,
+    "f1_macro_cv_folds": [
+      0.6943264414025491,
+      0.7941585072760541,
+      0.6602726634975299,
+      0.6850952295314313,
+      0.6884705867186511
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 22,
+    "n_splits": 5,
+    "tuning_rows": 8000,
+    "tuning_seconds": 172.0
+  },
+  "fit_seconds": 29.5,
+  "final_fit_rows": 33351,
+  "notes": "Optuna sur 8 000 lignes ; modèle final sur tout le train.",
+  "variants": {
+    "historical_8000": {
+      "fit_rows": 8000,
+      "fit_seconds": 1.2,
+      "metrics": {
+        "accuracy": 0.818418688230009,
+        "balanced_accuracy": 0.7275728992693195,
+        "f1_macro": 0.7389070805796768,
+        "f1_weighted": 0.8140528646652797
+      },
+      "per_class": {
+        "Performant": {
+          "precision": 0.6787564766839378,
+          "recall": 0.6649746192893401,
+          "f1": 0.6717948717948717,
+          "support": 394.0
+        },
+        "Passable": {
+          "precision": 0.8497409326424871,
+          "recall": 0.9013292433537833,
+          "f1": 0.8747751659120511,
+          "support": 7824.0
+        },
+        "Energivore": {
+          "precision": 0.7341513292433538,
+          "recall": 0.6164148351648352,
+          "f1": 0.6701512040321075,
+          "support": 2912.0
+        }
+      },
+      "n_support_total": 3718,
+      "n_support_per_class": {
+        "Energivore": 1431,
+        "Passable": 2092,
+        "Performant": 195
+      },
+      "support_ratio": 0.46475
+    },
+    "full_train": {
+      "fit_rows": 33351,
+      "fit_seconds": 29.5,
+      "metrics": {
+        "accuracy": 0.8148247978436658,
+        "balanced_accuracy": 0.7415851476006097,
+        "f1_macro": 0.747582950917541,
+        "f1_weighted": 0.8120658270238923
+      },
+      "per_class": {
+        "Performant": {
+          "precision": 0.7030456852791879,
+          "recall": 0.7030456852791879,
+          "f1": 0.7030456852791879,
+          "support": 394.0
+        },
+        "Passable": {
+          "precision": 0.8545767716535433,
+          "recall": 0.8877811860940695,
+          "f1": 0.8708625877632898,
+          "support": 7824.0
+        },
+        "Energivore": {
+          "precision": 0.7078220858895705,
+          "recall": 0.6339285714285714,
+          "f1": 0.6688405797101449,
+          "support": 2912.0
+        }
+      },
+      "n_support_total": 14862,
+      "n_support_per_class": {
+        "Energivore": 5813,
+        "Passable": 8288,
+        "Performant": 761
+      },
+      "support_ratio": 0.44562381937573087
+    }
+  },
+  "kernel_screening": [
+    {
+      "kernel": "Linéaire",
+      "f1_macro_cv_mean": 0.606974520449283,
+      "f1_macro_cv_std": 0.020694369785079825,
+      "seconds": 6.0
+    },
+    {
+      "kernel": "Polynomial (degré 3)",
+      "f1_macro_cv_mean": 0.6093798075115406,
+      "f1_macro_cv_std": 0.019553148232756414,
+      "seconds": 5.2
+    },
+    {
+      "kernel": "RBF",
+      "f1_macro_cv_mean": 0.5946867597336029,
+      "f1_macro_cv_std": 0.026882689587405795,
+      "seconds": 6.4
+    }
+  ]
+}

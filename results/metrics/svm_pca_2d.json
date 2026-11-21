@@ -1,0 +1,8 @@
+{
+  "explained_variance_ratio": [
+    0.4115171495693239,
+    0.178998737388831
+  ],
+  "n_support_2d": 4836,
+  "note": "Illustration uniquement : le SVM 2D n'est pas le modèle évalué."
+}
