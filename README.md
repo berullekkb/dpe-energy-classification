@@ -1,7 +1,34 @@
 ﻿# DPE Energy Classification
 
+[![Publier le site](https://github.com/berullekkb/dpe-energy-classification/actions/workflows/pages.yml/badge.svg)](https://github.com/berullekkb/dpe-energy-classification/actions/workflows/pages.yml)
+
 **Site interactif : [berullekkb.github.io/dpe-energy-classification](https://berullekkb.github.io/dpe-energy-classification/)**
 (simulateur, poids de classe, fuite par profils, carte t-SNE, benchmark).
+
+<table>
+  <tr>
+    <td width="50%"><a href="https://berullekkb.github.io/dpe-energy-classification/#simulateur"><img src="docs/images/site_simulateur.png" alt="Simulateur : un logement réel de validation, ses caractéristiques modifiables et la classe prédite par le modèle"></a></td>
+    <td width="50%"><a href="https://berullekkb.github.io/dpe-energy-classification/#fuite"><img src="docs/images/site_fuite.png" alt="Fuite par profils : score obtenu selon le découpage des données, ligne à ligne ou par profils"></a></td>
+  </tr>
+  <tr>
+    <td><b>Simulateur</b> : on part d'un logement réel, on modifie ses caractéristiques, le modèle (exécuté dans le navigateur) estime sa famille énergétique.</td>
+    <td><b>Fuite par profils</b> : 45 % des logements ont un « jumeau » exact ; un découpage ligne à ligne gonfle le score (0,788 contre 0,763).</td>
+  </tr>
+  <tr>
+    <td><a href="https://berullekkb.github.io/dpe-energy-classification/#poids"><img src="docs/images/site_poids.png" alt="Poids de classe : rappel, précision et F1 de la classe Performant selon le poids donné pendant l'apprentissage"></a></td>
+    <td><a href="https://berullekkb.github.io/dpe-energy-classification/#carte"><img src="docs/images/site_carte.png" alt="Carte t-SNE : 6 000 logements de validation colorés par classe, avec le détail d'un logement au survol"></a></td>
+  </tr>
+  <tr>
+    <td><b>Poids de classe</b> : le curseur montre le compromis rappel / précision de la classe Performant (Random Forest réentraîné pour chaque poids de 1 à 25).</td>
+    <td><b>Carte t-SNE</b> : 6 000 logements de validation placés selon leurs ressemblances ; vraie classe, prédiction ou erreurs seules.</td>
+  </tr>
+  <tr>
+    <td colspan="2"><a href="https://berullekkb.github.io/dpe-energy-classification/#benchmark"><img src="docs/images/site_benchmark.png" alt="Benchmark : F1 macro en validation des 11 modèles et matrice de confusion du modèle sélectionné"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Benchmark</b> : les 11 modèles optimisés par Optuna sous le même protocole, avec la matrice de confusion de chacun en validation, puis l'évaluation finale unique sur le test.</td>
+  </tr>
+</table>
 
 Projet AI28 : prédire la performance énergétique des logements des
 Hauts-de-France à partir des données DPE de l'ADEME.
@@ -166,7 +193,16 @@ classes.
 ## Site interactif
 
 Le dossier `docs/` contient un site statique (HTML, CSS, JavaScript sans
-dépendance) publié par GitHub Pages depuis la branche `main`, dossier `/docs`.
+dépendance, aucun cookie ni traceur). Il est publié sur GitHub Pages par le
+workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml), à chaque
+push sur `main` qui touche le site, ses tests ou `results/metrics/` :
+
+1. **`verify`** : test de parité JavaScript / Python
+   (`node tests/js/parity.test.mjs`) puis `pytest tests/test_site.py` ;
+2. **`deploy`** : lancé seulement si `verify` réussit, il publie `docs/`.
+
+Un site dont les chiffres ou les prédictions divergent du code Python n'est
+donc jamais mis en ligne : la version précédente reste publiée.
 
 - Toutes les données de `docs/data/` sont produites par
   `scripts/export_site_data.py` à partir de `results/` : aucun chiffre n'est
@@ -181,8 +217,9 @@ dépendance) publié par GitHub Pages depuis la branche `main`, dossier `/docs`.
 - Le simulateur part toujours d'un logement réel de validation. L'inertie du
   bâtiment n'y est pas modifiable, car ses codes sont ambigus dans les
   données (section 8 de l'audit).
-- Ces vérifications font partie de `python -m pytest -q` : à lancer avant
-  chaque push qui modifie `docs/`.
+- Ces vérifications font aussi partie de `python -m pytest -q`, pour les
+  lancer en local avant un push.
+- Les captures d'écran du haut de ce README sont dans `docs/images/`.
 
 Aperçu local :
 
