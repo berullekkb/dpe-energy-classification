@@ -23,7 +23,7 @@
     "pass__ventilation_posterieure_2012": 0.279,
     "cat__type_generateur_n1_ecs_n1": 0.279
   },
-  "tsne_seconds": 18.8,
+  "tsne_seconds": 75.2,
   "tsne_perplexity": 30.0,
   "tsne_kl_divergence": 0.7720293998718262,
   "knn10_same_class_by_class": {

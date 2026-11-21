@@ -1,0 +1,1 @@
+{"generated_at":"2026-11-21T09:31:54+00:00","n_rows":55357,"n_features":19,"class_counts":{"Performant":2303,"Passable":39557,"Energivore":13497},"split_sizes":{"train":33351,"validation":11130,"test":10876},"n_profiles":34970,"share_rows_duplicated_profiles":0.450458,"contradictory_profiles":908,"contradictory_rows":5955}

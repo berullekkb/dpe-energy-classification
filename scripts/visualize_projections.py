@@ -21,6 +21,7 @@ import time
 
 import joblib
 import numpy as np
+import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
@@ -95,6 +96,10 @@ def main(argv=None):
     summary["tsne_perplexity"] = args.perplexity
     summary["tsne_kl_divergence"] = float(tsne.kl_divergence_)
     names = ("t-SNE 1", "t-SNE 2")
+    pd.DataFrame({
+        "row_id": X_s.index, "tsne_1": T[:, 0].round(4), "tsne_2": T[:, 1].round(4),
+        "true": y_true, "predicted": y_pred,
+    }).to_csv(METRICS_DIR / "tsne_validation_points.csv", index=False)
     plot_embedding(T, y_true, "t-SNE - validation, vraie classe",
                    FIGURES_DIR / "tsne_validation_true.png", axis_names=names)
     plot_embedding(T, y_pred, f"t-SNE - validation, prédiction {spec.label}",
