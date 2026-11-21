@@ -1,4 +1,4 @@
-/* Site DPE Hauts-de-France : navigation et onglets interactifs.
+/* Site Machine Learning · DPE Energy Classification : navigation et onglets interactifs.
  * Toutes les données viennent de site/data/*.json, produits par
  * scripts/export_site_data.py à partir des résultats du dépôt. */
 (function () {

@@ -1,4 +1,4 @@
-﻿# DPE Energy Classification
+﻿# Machine Learning · DPE Energy Classification
 
 [![Publier le site](https://github.com/berullekkb/dpe-energy-classification/actions/workflows/pages.yml/badge.svg)](https://github.com/berullekkb/dpe-energy-classification/actions/workflows/pages.yml)
 
