@@ -1,0 +1,20 @@
+# Versions utilisées pour les expériences de results/ (Python 3.13).
+# Des versions plus récentes compatibles fonctionnent en général.
+numpy>=2.0
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.8,<1.10
+openpyxl>=3.1
+joblib>=1.4
+optuna>=4.0
+matplotlib>=3.8
+pytest>=8.0
+
+# Boosting (les tests correspondants sont ignorés si un paquet est absent)
+xgboost>=2.1
+lightgbm>=4.5
+catboost>=1.2
+
+# Uniquement pour vérifier l'équivalence avec le TargetEncoder historique
+# (tests/test_preprocessing.py), facultatif.
+category_encoders>=2.6

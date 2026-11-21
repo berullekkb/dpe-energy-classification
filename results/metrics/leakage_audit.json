@@ -1,0 +1,13 @@
+{
+  "n_observations": 55357,
+  "n_variables": 19,
+  "n_profils_uniques": 34970,
+  "lignes_dans_profils_dupliques": 24936,
+  "part_lignes_profils_dupliques": 0.450457936665643,
+  "profils_etiquettes_contradictoires": 908,
+  "lignes_profils_contradictoires": 5955,
+  "variables_nom_suspect": [],
+  "max_f1_une_variable": 0.4810336481069377,
+  "seuil_alerte_f1_une_variable": 0.9,
+  "conclusion": "Aucune variable ne révèle directement l'étiquette : pas de sortie du calcul DPE parmi les colonnes et aucune variable seule ne dépasse le seuil d'alerte. Les variables sont des entrées du calcul 3CL : le problème revient à approcher la méthode réglementaire à partir d'une description partielle du logement."
+}
