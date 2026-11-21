@@ -224,3 +224,33 @@ fois, pour le modèle choisi à l'avance.
 Les expériences historiques (espaces de recherche des notebooks) et les
 nouvelles expériences (LightGBM, CatBoost) sont distinguées par le champ
 `origin` de chaque modèle (`historical` / `new`).
+
+## 8. Anomalie détectée pendant la migration : codes ordinaux
+
+Les variables `_enc` du fichier `data_for_processing_final.xlsx` n'ont pas
+les codes attendus :
+
+| Variable | Codes présents | Codes attendus |
+|---|---|---|
+| `qualite_isolation_*_enc` (4 variables) | 0, 1, 2, **4** | 0, 1, 2, 3 |
+| `classe_inertie_batiment_enc` | **1, 2, 4, 5** | 0, 1, 2, 3 |
+| `periode_construction_enc` | 0, 1, 2, 3, 4 | 0 à 4 |
+
+Cause probable : dans le notebook 02, les libellés accentués des données
+(`très bonne`, `Légère`, `Très lourde`) ne sont pas codés comme ceux du
+dictionnaire d'ordre (normalisation Unicode différente, NFD contre NFC). Ces
+valeurs « inattendues » sont alors ajoutées à la fin de l'ordre.
+
+Conséquences :
+- isolation : l'ordre est préservé (`très bonne` = 4 reste la meilleure
+  modalité), seul un écart vide apparaît ; aucun impact pour les arbres, effet
+  négligeable pour les modèles linéaires ;
+- inertie : `Moyenne` = 1 et `Lourde` = 2 sont corrects, mais `Légère` et
+  `Très lourde` reçoivent 4 et 5 : l'ordre n'est plus monotone. Les arbres ne
+  sont pas affectés ; pour la régression logistique et le SVM, cette variable
+  se comporte comme une variable mal ordonnée.
+
+Les données n'ont pas été modifiées (les données brutes ne sont pas dans le
+dépôt). Correction recommandée dans le notebook 02 : normaliser les chaînes
+avec `unicodedata.normalize("NFC", ...)` avant l'encodage ordinal, puis
+réexporter le fichier.

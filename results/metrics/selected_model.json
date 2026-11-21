@@ -1,0 +1,57 @@
+{
+  "selected_model": "random_forest",
+  "label": "Random Forest",
+  "criterion": "F1 macro maximal sur la validation",
+  "validation_f1_macro": 0.774869866853302,
+  "validation_balanced_accuracy": 0.79368754778953,
+  "cv_f1_macro_train": 0.7484278324188895,
+  "runner_up": "gradient_boosting",
+  "runner_up_validation_f1_macro": 0.7727224585680673,
+  "test_used_for_selection": false,
+  "ranking": [
+    {
+      "model": "random_forest",
+      "val_f1_macro": 0.774869866853302
+    },
+    {
+      "model": "gradient_boosting",
+      "val_f1_macro": 0.7727224585680673
+    },
+    {
+      "model": "lightgbm",
+      "val_f1_macro": 0.7690522542728191
+    },
+    {
+      "model": "catboost",
+      "val_f1_macro": 0.7668074900469423
+    },
+    {
+      "model": "xgboost",
+      "val_f1_macro": 0.7634723766989527
+    },
+    {
+      "model": "decision_tree",
+      "val_f1_macro": 0.7513303081457935
+    },
+    {
+      "model": "svm_rbf",
+      "val_f1_macro": 0.747582950917541
+    },
+    {
+      "model": "adaboost",
+      "val_f1_macro": 0.7408508064310181
+    },
+    {
+      "model": "lr_lasso",
+      "val_f1_macro": 0.7232627360879542
+    },
+    {
+      "model": "lr_elasticnet",
+      "val_f1_macro": 0.716038556531792
+    },
+    {
+      "model": "lr_ridge",
+      "val_f1_macro": 0.6895143711437841
+    }
+  ]
+}

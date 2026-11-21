@@ -1,0 +1,31 @@
+{
+  "model": "random_forest",
+  "n_validation": 11130,
+  "n_errors": 2093,
+  "error_rate": 0.18805031446540882,
+  "confidence_correct_median": 0.8403794715679462,
+  "confidence_errors_median": 0.6503993883159825,
+  "models_compared": [
+    "adaboost",
+    "catboost",
+    "decision_tree",
+    "final_random_forest",
+    "gradient_boosting",
+    "lightgbm",
+    "lr_elasticnet",
+    "lr_lasso",
+    "lr_ridge",
+    "random_forest",
+    "svm_rbf",
+    "xgboost"
+  ],
+  "rows_wrong_for_all_models": 391,
+  "share_wrong_for_all_models": 0.035130278526504945,
+  "share_wrong_for_at_least_one_model": 0.401707097933513,
+  "extreme_confusions": 3,
+  "hard_errors_by_true_class": {
+    "Passable": 297,
+    "Energivore": 83,
+    "Performant": 11
+  }
+}

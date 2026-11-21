@@ -1,0 +1,10 @@
+model,notebook,f1_test_historique_notebook,f1_test_historique_07,label,f1_macro_cv,val_f1_macro,avertissement
+lr_elasticnet,03,0.726,0.715,Logistique Elastic Net,0.7006684726234155,0.716038556531792,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+lr_ridge,03,0.704,,Logistique Ridge,0.7060816591296616,0.6895143711437841,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+lr_lasso,03,0.708,,Logistique Lasso,0.6971948756737018,0.7232627360879542,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+svm_rbf,04,0.707,0.743,SVM (noyau RBF),0.7044646856852431,0.747582950917541,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+decision_tree,05,0.766,,Arbre de décision,0.7188348405546394,0.7513303081457935,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+random_forest,05,0.788,0.79,Random Forest,0.7484278324188895,0.774869866853302,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+adaboost,06,0.706,,AdaBoost,0.7195710237694843,0.7408508064310181,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+gradient_boosting,06,0.78,0.799,Gradient Boosting,0.7501464018134602,0.7727224585680673,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.
+xgboost,06,0.777,,XGBoost,0.7440578663695014,0.7634723766989527,Historique : split stratifié ligne à ligne et sélection sur le test ; non comparable au protocole par profils.

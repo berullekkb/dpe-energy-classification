@@ -110,10 +110,10 @@ def plot_grouped_bars(df: pd.DataFrame, label_col: str, value_cols: dict,
         ax.bar(x + (k - (len(value_cols) - 1) / 2) * width, df[col], width,
                label=name, color=color)
     ax.set_xticks(x, labels, rotation=30, ha="right")
-    ax.set_ylim(0, 1)
+    ax.set_ylim(0, 1.12)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
-    ax.legend()
+    ax.legend(loc="upper center", ncol=len(value_cols), frameon=False)
     fig.tight_layout()
     return _save(fig, path)
 

@@ -1,0 +1,34 @@
+{
+  "model": "random_forest",
+  "n_points": 6000,
+  "points_from": "validation",
+  "error_rate_sample": 0.18566666666666667,
+  "pca_explained_variance_ratio": [
+    0.1815,
+    0.1141,
+    0.0985,
+    0.0803,
+    0.0608,
+    0.0555,
+    0.0511,
+    0.0498,
+    0.0472,
+    0.0449
+  ],
+  "pca_cp1_top_loadings": {
+    "pass__qualite_isolation_murs_enc": 0.346,
+    "pass__qualite_isolation_menuiseries_enc": 0.319,
+    "pass__qualite_isolation_enveloppe_enc": 0.316,
+    "cat__type_generateur_n1_installation_n1": 0.3,
+    "pass__ventilation_posterieure_2012": 0.279,
+    "cat__type_generateur_n1_ecs_n1": 0.279
+  },
+  "tsne_seconds": 18.8,
+  "tsne_perplexity": 30.0,
+  "tsne_kl_divergence": 0.7720293998718262,
+  "knn10_same_class_by_class": {
+    "Energivore": 0.633375796178344,
+    "Passable": 0.8219772403982931,
+    "Performant": 0.6047169811320754
+  }
+}

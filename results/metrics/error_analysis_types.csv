@@ -1,0 +1,6 @@
+reel,predit,type,n,part_des_erreurs
+Passable,Energivore,classes voisines,1451,0.6932632584806497
+Energivore,Passable,classes voisines,445,0.2126134734830387
+Performant,Passable,classes voisines,103,0.04921165790731008
+Passable,Performant,classes voisines,91,0.043478260869565216
+Performant,Energivore,extreme (Performant <-> Energivore),3,0.001433349259436216
