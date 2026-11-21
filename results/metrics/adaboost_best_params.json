@@ -1,0 +1,36 @@
+{
+  "model": "adaboost",
+  "label": "AdaBoost",
+  "family": "boosting",
+  "origin": "historical",
+  "historical_notebook": "06",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 3,
+    "weight_Energivore": 2,
+    "n_estimators": 350,
+    "learning_rate": 0.49592290209849677
+  },
+  "class_weight": {
+    "Performant": 3.0,
+    "Passable": 1.0,
+    "Energivore": 2.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7195710237694843,
+  "f1_macro_cv_std": 0.01921636870470862,
+  "f1_macro_cv_folds": [
+    0.7241283578484999,
+    0.7392088919293585,
+    0.7134555319774464,
+    0.7354218471871149,
+    0.685640489905002
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 19,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 965.0
+}

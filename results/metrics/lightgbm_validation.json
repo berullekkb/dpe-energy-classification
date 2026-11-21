@@ -1,0 +1,56 @@
+{
+  "model": "lightgbm",
+  "label": "LightGBM",
+  "family": "boosting",
+  "origin": "new",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.8345911949685535,
+    "balanced_accuracy": 0.7825806136577756,
+    "f1_macro": 0.7690522542728191,
+    "f1_weighted": 0.8329499822068737
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.6573275862068966,
+      "recall": 0.7741116751269036,
+      "f1": 0.710955710955711,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.8723404255319149,
+      "recall": 0.8960889570552147,
+      "f1": 0.8840552298089653,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.7504754659566375,
+      "recall": 0.6775412087912088,
+      "f1": 0.7121458220537809,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7546872636362798,
+    "f1_macro_cv_std": 0.012475871263042702,
+    "f1_macro_cv_folds": [
+      0.7506275505073098,
+      0.7682208599349173,
+      0.7451784061768744,
+      0.7703281040961749,
+      0.7390813974661223
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 19,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 393.5
+  },
+  "fit_seconds": 4.93,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

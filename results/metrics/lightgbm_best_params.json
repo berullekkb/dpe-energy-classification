@@ -1,0 +1,42 @@
+{
+  "model": "lightgbm",
+  "label": "LightGBM",
+  "family": "boosting",
+  "origin": "new",
+  "historical_notebook": "-",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 23,
+    "weight_Energivore": 1,
+    "n_estimators": 450,
+    "learning_rate": 0.022465804595692595,
+    "num_leaves": 101,
+    "max_depth": 10,
+    "min_child_samples": 9,
+    "subsample": 0.5261980825104889,
+    "colsample_bytree": 0.8623280778190123,
+    "reg_lambda": 0.01196730319622007
+  },
+  "class_weight": {
+    "Performant": 23.0,
+    "Passable": 1.0,
+    "Energivore": 1.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7546872636362798,
+  "f1_macro_cv_std": 0.012475871263042702,
+  "f1_macro_cv_folds": [
+    0.7506275505073098,
+    0.7682208599349173,
+    0.7451784061768744,
+    0.7703281040961749,
+    0.7390813974661223
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 19,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 393.5
+}

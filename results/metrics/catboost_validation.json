@@ -1,0 +1,56 @@
+{
+  "model": "catboost",
+  "label": "CatBoost",
+  "family": "boosting",
+  "origin": "new",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.8174303683737646,
+    "balanced_accuracy": 0.8135489087684208,
+    "f1_macro": 0.7668074900469423,
+    "f1_weighted": 0.8224617107666431
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.6327345309381237,
+      "recall": 0.8045685279187818,
+      "f1": 0.7083798882681565,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.913478012564249,
+      "recall": 0.8177402862985685,
+      "f1": 0.8629619638521716,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.6573793103448275,
+      "recall": 0.8183379120879121,
+      "f1": 0.7290806180204987,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7532965809883481,
+    "f1_macro_cv_std": 0.014618910951881482,
+    "f1_macro_cv_folds": [
+      0.7527804535887862,
+      0.7687225914516297,
+      0.748494041989623,
+      0.7676875871214955,
+      0.7287982307902064
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 22,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 463.9
+  },
+  "fit_seconds": 4.12,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

@@ -1,0 +1,38 @@
+{
+  "model": "catboost",
+  "label": "CatBoost",
+  "family": "boosting",
+  "origin": "new",
+  "historical_notebook": "-",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 7,
+    "weight_Energivore": 2,
+    "iterations": 450,
+    "learning_rate": 0.07211415904539842,
+    "depth": 7,
+    "l2_leaf_reg": 2.105630440662605
+  },
+  "class_weight": {
+    "Performant": 7.0,
+    "Passable": 1.0,
+    "Energivore": 2.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7532965809883481,
+  "f1_macro_cv_std": 0.014618910951881482,
+  "f1_macro_cv_folds": [
+    0.7527804535887862,
+    0.7687225914516297,
+    0.748494041989623,
+    0.7676875871214955,
+    0.7287982307902064
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 22,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 463.9
+}

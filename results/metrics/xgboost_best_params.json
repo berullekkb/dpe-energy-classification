@@ -1,0 +1,39 @@
+{
+  "model": "xgboost",
+  "label": "XGBoost",
+  "family": "boosting",
+  "origin": "historical",
+  "historical_notebook": "06",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 4,
+    "weight_Energivore": 5,
+    "n_estimators": 150,
+    "learning_rate": 0.05954553793888989,
+    "max_depth": 7,
+    "subsample": 0.5998368910791798,
+    "reg_lambda": 0.11400863701127326
+  },
+  "class_weight": {
+    "Performant": 4.0,
+    "Passable": 1.0,
+    "Energivore": 5.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7440578663695014,
+  "f1_macro_cv_std": 0.010473925144927548,
+  "f1_macro_cv_folds": [
+    0.7485583601087891,
+    0.75175711657419,
+    0.7375190066327729,
+    0.7555487920503355,
+    0.7269060564814196
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 20,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 208.8
+}

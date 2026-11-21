@@ -1,0 +1,56 @@
+{
+  "model": "xgboost",
+  "label": "XGBoost",
+  "family": "boosting",
+  "origin": "historical",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.791015274034142,
+    "balanced_accuracy": 0.8119154320241954,
+    "f1_macro": 0.7634723766989527,
+    "f1_weighted": 0.7996214996319897
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.7054794520547946,
+      "recall": 0.7842639593908629,
+      "f1": 0.7427884615384616,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.9405639218199295,
+      "recall": 0.7503834355828221,
+      "f1": 0.8347788994739087,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.5896629213483147,
+      "recall": 0.9010989010989011,
+      "f1": 0.7128497690844879,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7440578663695014,
+    "f1_macro_cv_std": 0.010473925144927548,
+    "f1_macro_cv_folds": [
+      0.7485583601087891,
+      0.75175711657419,
+      0.7375190066327729,
+      0.7555487920503355,
+      0.7269060564814196
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 20,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 208.8
+  },
+  "fit_seconds": 1.25,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

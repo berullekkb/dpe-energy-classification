@@ -1,0 +1,38 @@
+{
+  "model": "gradient_boosting",
+  "label": "Gradient Boosting",
+  "family": "boosting",
+  "origin": "historical",
+  "historical_notebook": "06",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 4,
+    "weight_Energivore": 3,
+    "n_estimators": 150,
+    "learning_rate": 0.09446098088644411,
+    "max_depth": 7,
+    "subsample": 0.941822230319872
+  },
+  "class_weight": {
+    "Performant": 4.0,
+    "Passable": 1.0,
+    "Energivore": 3.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7501464018134602,
+  "f1_macro_cv_std": 0.015843143960593574,
+  "f1_macro_cv_folds": [
+    0.7582294993839046,
+    0.7589551025863143,
+    0.7449210532013782,
+    0.7668602286881369,
+    0.721766125207567
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 23,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 2701.2
+}
