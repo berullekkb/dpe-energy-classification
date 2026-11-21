@@ -1,0 +1,95 @@
+{
+  "model": "random_forest",
+  "label": "Random Forest",
+  "params": {
+    "weight_Performant": 5,
+    "weight_Energivore": 3,
+    "n_estimators": 350,
+    "max_depth": 17,
+    "max_features": 0.1113302299547129,
+    "min_samples_leaf": 1
+  },
+  "evaluated_at": "2026-11-21T02:41:12+00:00",
+  "selection": {
+    "criterion": "F1 macro maximal sur la validation",
+    "validation_f1_macro": 0.774869866853302,
+    "test_used_for_selection": false
+  },
+  "validation_metrics": {
+    "accuracy": 0.8119496855345912,
+    "balanced_accuracy": 0.79368754778953,
+    "f1_macro": 0.774869866853302,
+    "f1_weighted": 0.8180066053871607
+  },
+  "test": {
+    "train_only": {
+      "fit_rows": 33351,
+      "metrics": {
+        "accuracy": 0.7901802133137182,
+        "balanced_accuracy": 0.7219425524385968,
+        "f1_macro": 0.7190466739428226,
+        "f1_weighted": 0.7963043042182685
+      },
+      "per_class": {
+        "Performant": {
+          "precision": 0.7458563535911602,
+          "recall": 0.5222437137330754,
+          "f1": 0.6143344709897611,
+          "support": 517.0
+        },
+        "Passable": {
+          "precision": 0.9077501881113619,
+          "recall": 0.7841913676547062,
+          "f1": 0.8414591616098207,
+          "support": 7692.0
+        },
+        "Energivore": {
+          "precision": 0.5924011372447661,
+          "recall": 0.859392575928009,
+          "f1": 0.7013463892288861,
+          "support": 2667.0
+        }
+      }
+    },
+    "train_plus_validation": {
+      "fit_rows": 44481,
+      "metrics": {
+        "accuracy": 0.7934902537697683,
+        "balanced_accuracy": 0.7306677537245431,
+        "f1_macro": 0.7277279474066436,
+        "f1_weighted": 0.7996530493770914
+      },
+      "per_class": {
+        "Performant": {
+          "precision": 0.7587131367292225,
+          "recall": 0.5473887814313346,
+          "f1": 0.6359550561797753,
+          "support": 517.0
+        },
+        "Passable": {
+          "precision": 0.9085868424996254,
+          "recall": 0.7882215288611545,
+          "f1": 0.8441350504698921,
+          "support": 7692.0
+        },
+        "Energivore": {
+          "precision": 0.5963446475195823,
+          "recall": 0.8563929508811399,
+          "f1": 0.7030937355702632,
+          "support": 2667.0
+        }
+      }
+    }
+  },
+  "test_size": 10876,
+  "reference_baseline_test": {
+    "model": "Régression logistique L2, one-hot, poids balanced (baseline initiale, train/test par profils)",
+    "metrics": {
+      "accuracy": 0.733909525560868,
+      "balanced_accuracy": 0.7538180168803051,
+      "f1_macro": 0.6483622905003957,
+      "f1_weighted": 0.7478657894795387
+    }
+  },
+  "note": "Le test avait déjà servi à la baseline logistique ; il n'a jamais servi à sélectionner un modèle ou un hyperparamètre."
+}
