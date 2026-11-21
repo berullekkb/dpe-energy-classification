@@ -1,0 +1,56 @@
+{
+  "model": "lr_elasticnet",
+  "label": "Logistique Elastic Net",
+  "family": "linear",
+  "origin": "historical",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.7761904761904762,
+    "balanced_accuracy": 0.7603459745706562,
+    "f1_macro": 0.716038556531792,
+    "f1_weighted": 0.7829800943088702
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.576,
+      "recall": 0.7309644670050761,
+      "f1": 0.6442953020134228,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.8874691447655002,
+      "recall": 0.7811860940695297,
+      "f1": 0.8309428318945007,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.598183275447502,
+      "recall": 0.7688873626373627,
+      "f1": 0.672877535687453,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7006684726234155,
+    "f1_macro_cv_std": 0.023534422696613707,
+    "f1_macro_cv_folds": [
+      0.7225469340067897,
+      0.7240743995905975,
+      0.692825141035286,
+      0.7040884789294289,
+      0.6598074095549752
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 21,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 1481.9
+  },
+  "fit_seconds": 7.93,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

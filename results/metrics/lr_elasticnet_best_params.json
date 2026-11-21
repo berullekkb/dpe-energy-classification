@@ -1,0 +1,36 @@
+{
+  "model": "lr_elasticnet",
+  "label": "Logistique Elastic Net",
+  "family": "linear",
+  "origin": "historical",
+  "historical_notebook": "03",
+  "encoding": "target",
+  "scaled": true,
+  "params": {
+    "weight_Performant": 5,
+    "weight_Energivore": 2,
+    "C": 0.8664978886836745,
+    "l1_ratio": 0.7441583659233141
+  },
+  "class_weight": {
+    "Performant": 5.0,
+    "Passable": 1.0,
+    "Energivore": 2.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7006684726234155,
+  "f1_macro_cv_std": 0.023534422696613707,
+  "f1_macro_cv_folds": [
+    0.7225469340067897,
+    0.7240743995905975,
+    0.692825141035286,
+    0.7040884789294289,
+    0.6598074095549752
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 21,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 1481.9
+}

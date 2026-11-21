@@ -1,0 +1,37 @@
+{
+  "model": "decision_tree",
+  "label": "Arbre de décision",
+  "family": "tree",
+  "origin": "historical",
+  "historical_notebook": "05",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 1,
+    "weight_Energivore": 1,
+    "max_depth": 19,
+    "min_samples_leaf": 35,
+    "min_samples_split": 61
+  },
+  "class_weight": {
+    "Performant": 1.0,
+    "Passable": 1.0,
+    "Energivore": 1.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7188348405546394,
+  "f1_macro_cv_std": 0.013059087825806726,
+  "f1_macro_cv_folds": [
+    0.7236812719763804,
+    0.7394601798596172,
+    0.7066524176707277,
+    0.7213305042876539,
+    0.7030498289788176
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 19,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 95.4
+}

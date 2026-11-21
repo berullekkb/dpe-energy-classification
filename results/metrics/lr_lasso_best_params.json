@@ -1,0 +1,35 @@
+{
+  "model": "lr_lasso",
+  "label": "Logistique Lasso",
+  "family": "linear",
+  "origin": "historical",
+  "historical_notebook": "03",
+  "encoding": "target",
+  "scaled": true,
+  "params": {
+    "weight_Performant": 4,
+    "weight_Energivore": 1,
+    "C": 0.2203883470619977
+  },
+  "class_weight": {
+    "Performant": 4.0,
+    "Passable": 1.0,
+    "Energivore": 1.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.6971948756737018,
+  "f1_macro_cv_std": 0.022028606257222492,
+  "f1_macro_cv_folds": [
+    0.7095837482456439,
+    0.725406801309087,
+    0.6816738628940349,
+    0.7061200813787357,
+    0.6631898845410072
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 20,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 334.6
+}

@@ -1,0 +1,56 @@
+{
+  "model": "lr_ridge",
+  "label": "Logistique Ridge",
+  "family": "linear",
+  "origin": "historical",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.7810422282120395,
+    "balanced_accuracy": 0.6670856930795114,
+    "f1_macro": 0.6895143711437841,
+    "f1_weighted": 0.7850350268143813
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.8067632850241546,
+      "recall": 0.42385786802030456,
+      "f1": 0.5557404326123128,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.8776796973518285,
+      "recall": 0.8006134969325154,
+      "f1": 0.8373771806697413,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.5974643423137876,
+      "recall": 0.7767857142857143,
+      "f1": 0.6754255001492983,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.7060816591296616,
+    "f1_macro_cv_std": 0.01615549844856657,
+    "f1_macro_cv_folds": [
+      0.7029243475503959,
+      0.7193917243985718,
+      0.7278950644065278,
+      0.6981958596658956,
+      0.682001299626917
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 20,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 284.0
+  },
+  "fit_seconds": 1.76,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

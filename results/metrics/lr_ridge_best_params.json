@@ -1,0 +1,35 @@
+{
+  "model": "lr_ridge",
+  "label": "Logistique Ridge",
+  "family": "linear",
+  "origin": "historical",
+  "historical_notebook": "03",
+  "encoding": "target",
+  "scaled": true,
+  "params": {
+    "weight_Performant": 1,
+    "weight_Energivore": 2,
+    "C": 7.334712176486228
+  },
+  "class_weight": {
+    "Performant": 1.0,
+    "Passable": 1.0,
+    "Energivore": 2.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7060816591296616,
+  "f1_macro_cv_std": 0.01615549844856657,
+  "f1_macro_cv_folds": [
+    0.7029243475503959,
+    0.7193917243985718,
+    0.7278950644065278,
+    0.6981958596658956,
+    0.682001299626917
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 20,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 284.0
+}

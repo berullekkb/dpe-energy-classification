@@ -1,0 +1,56 @@
+{
+  "model": "lr_lasso",
+  "label": "Logistique Lasso",
+  "family": "linear",
+  "origin": "historical",
+  "evaluated_on": "validation",
+  "test_evaluated": false,
+  "train_size": 33351,
+  "validation_size": 11130,
+  "test_size": 10876,
+  "metrics": {
+    "accuracy": 0.8086253369272237,
+    "balanced_accuracy": 0.7269702114829174,
+    "f1_macro": 0.7232627360879542,
+    "f1_weighted": 0.8022436704926168
+  },
+  "per_class": {
+    "Performant": {
+      "precision": 0.6140350877192983,
+      "recall": 0.7106598984771574,
+      "f1": 0.6588235294117647,
+      "support": 394.0
+    },
+    "Passable": {
+      "precision": 0.8372809095215538,
+      "recall": 0.9036298568507157,
+      "f1": 0.8691910499139415,
+      "support": 7824.0
+    },
+    "Energivore": {
+      "precision": 0.7399103139013453,
+      "recall": 0.5666208791208791,
+      "f1": 0.6417736289381564,
+      "support": 2912.0
+    }
+  },
+  "cv": {
+    "f1_macro_cv_mean": 0.6971948756737018,
+    "f1_macro_cv_std": 0.022028606257222492,
+    "f1_macro_cv_folds": [
+      0.7095837482456439,
+      0.725406801309087,
+      0.6816738628940349,
+      0.7061200813787357,
+      0.6631898845410072
+    ],
+    "n_trials": 25,
+    "n_trials_complete": 20,
+    "n_splits": 5,
+    "tuning_rows": 33351,
+    "tuning_seconds": 334.6
+  },
+  "fit_seconds": 3.63,
+  "final_fit_rows": 33351,
+  "notes": ""
+}

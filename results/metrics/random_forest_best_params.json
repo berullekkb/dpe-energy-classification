@@ -1,0 +1,38 @@
+{
+  "model": "random_forest",
+  "label": "Random Forest",
+  "family": "tree",
+  "origin": "historical",
+  "historical_notebook": "05",
+  "encoding": "target",
+  "scaled": false,
+  "params": {
+    "weight_Performant": 5,
+    "weight_Energivore": 3,
+    "n_estimators": 350,
+    "max_depth": 17,
+    "max_features": 0.1113302299547129,
+    "min_samples_leaf": 1
+  },
+  "class_weight": {
+    "Performant": 5.0,
+    "Passable": 1.0,
+    "Energivore": 3.0
+  },
+  "selection_metric": "f1_macro",
+  "tuned_on": "train (StratifiedGroupKFold par profils)",
+  "f1_macro_cv_mean": 0.7484278324188895,
+  "f1_macro_cv_std": 0.01450325632523967,
+  "f1_macro_cv_folds": [
+    0.7542210078198113,
+    0.7668848744842015,
+    0.7480680239449752,
+    0.7504825146026898,
+    0.72248274124277
+  ],
+  "n_trials": 25,
+  "n_trials_complete": 22,
+  "n_splits": 5,
+  "tuning_rows": 33351,
+  "tuning_seconds": 764.9
+}
